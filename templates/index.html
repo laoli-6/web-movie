@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线影院 </title>
+    <!-- 引入外联样式表文件 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/bootstrapicons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+</head>
+</head>
+<body >
+{% block content %}
+    {% endblock %}
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+<!-- 头部欢迎首页 -->
+<div id="header">
+    <div class="container-fluid" id="headerbox">
+        <div class="row">
+            <div class="col-md-6 " id="title">
+                <a href="../templates/index.html">免费观影站点</a>
+            </div>
+            <div class="col-md-6 text-center" id="menu">
+                <ul class="nav-menu">
+                    <li><a href="#">主站</a></li>
+                    <li><a href="#">友情链接</a></li>
+                    <li> <a href="{{ url_for('about') }}" style="color: white;">关于我们</a></li>
+                    <li><a href="{{ url_for('delete_account') }}" style="color: white;">删除账户</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 头部幻灯片轮播 -->
+<div class="container-fluid" id="head_2" style="border-radius: 10px; border: 1px solid #000; box-shadow: 0 0 10px 10px #999191; margin-top: 20px;">
+    <div class="row">
+        <div class="col-12">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                       <img src="{{ url_for('static', filename='image/我和我的祖国.jpg') }}" class="d-block w-100" alt="我和我的祖国">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='image/星球大战.jpg') }}" class="d-block w-100" alt="星球大战">
+                    </div>
+                    <div class="carousel-item">
+                       <img src="{{ url_for('static', filename='image/画江湖.jpg') }}" class="d-block w-100" alt="画江湖">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 内容导航栏部分 -->
+<div class="d-flex justify-content-center" style="margin-top: 60px;">
+    <ul class="nav nav-pills custom-pills" role="tablist" style="margin-right: 30px;">
+        <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link active custom-color" data-bs-toggle="pill" href="#home">首页</a>
+        </li>
+        <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link custom-color" data-bs-toggle="pill" href="#menu1">电影</a>
+        </li>
+        <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link custom-color" data-bs-toggle="pill" href="#menu2">电视剧</a>
+        </li>
+        <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link custom-color" data-bs-toggle="pill" href="#menu3">动漫</a>
+        </li>
+        <li class="nav-item" style="margin-right: 30px;">
+            <a class="nav-link custom-color" data-bs-toggle="pill" href="#menu4">综艺</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link custom-color" data-bs-toggle="pill" href="#menu5">纪录片</a>
+        </li>
+    </ul>
+    <form class="d-flex" style="margin-right: 60px;">
+        <input class="form-control me-2" type="text" placeholder="电影·动漫·电视剧·综艺···" style="color: white;">
+        <button class="btn btn-primary" type="button" style="background-color: #706158; color: white;">Search</button>
+    </form>
+</div>
+<!-- 首页 -->
+<div class="tab-content container-fluid" style="background-color: #999191;  border-radius: 10px; margin-top: 10px;">
+    <div id="home" class="tab-pane active">
+        <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+            <h3 style="display: inline;">电影推荐</h3>
+             <a href="{{ url_for('movie') }}" style="color: black;">电影</a>
+        </div>
+        <ul class="body" style="display: flex; list-style: none; background-color: #FFFFFF; border-radius: 10px;">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/九龙城寨.jpg') }}" alt="九龙城寨">
+                <div class="info">
+                    <a href="#" class="title">九龙城寨之围城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/没有一顿火锅.jpg') }}" alt="火锅">
+                <div class="info">
+                    <a href="#" class="title">没有一顿火锅解决不了··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">飞驰人生2</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                 <img src="{{ url_for('static', filename='image/猿球崛起.jpg') }}" alt="猿球崛起">
+                <div class="info">
+                    <a href="#" class="title">猩球崛起：新世界</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/末路狂花钱.webp') }}" alt="末路狂花钱">
+                <div class="info">
+                    <a href="#" class="title">末路狂花钱</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+
+         <!-- 著名演员详电影推荐 -->
+         <div class="row"  style="background-color: #FFFFFF;  border-radius: 10px;">
+            <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+                <h3 style="display: inline; color: rgb(27, 17, 17);">著名演员</h3>
+                <a href="#" style="color: black;">更多</a>
+            </div>
+            <div class="col-md-6" style="margin-top: 10px;"id="star_1">
+                <ul class="body" style="display: flex; flex-direction: column; list-style: none; ">
+                    <li>
+                        <div >
+                            <div>
+                                <img src="{{ url_for('static', filename='image/胡歌.jpg') }}" alt="胡歌">
+                                <a href="#" class="title">胡歌</a>
+                                <p>戏剧表演中，胡歌能够准确塑造角色，情感表达真挚动人，令人印象深刻
+                                    形象亲和:胡歌拥有出众的外表和气质,给人一种温暖、亲和的感觉,深受观众喜爱。他在荧屏上的形象深入人心。胡歌积极参与公益事业,为社会做出了自己的贡献,树立了良好的社会形象
+                                </p>
+                            </div>
+                            <div>
+                                 <img src="{{ url_for('static', filename='image/彭于晏.jpg') }}" alt="彭于晏">
+                                <a href="#" class="title">彭于晏</a>
+                                <p>彭于晏是一个家教很好、很有幽默感，工作时认真敬业，很好相处讨人喜欢的大男孩
+                                    彭于晏不仅在演艺圈表现出色，还涉足音乐和时尚领域。他不断挑战自我，展现了多方面的才华。
+                                    彭于晏的演艺事业不仅局限于亚洲地区，他也积极参与国际合作，扩大了自己的国际影响力。 
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div>
+                                <img src="{{ url_for('static', filename='image/朱亚文.webp') }}" alt="朱亚文">
+                                <a href="#" class="title">朱亚文</a>
+                                <p>笑容好看、行走的荷尔蒙、声音好听、会配音、思考有深度,文质彬彬的气质下隐藏着一股不服输的韧劲儿
+                                    朱亚文参与了多部备受好评的影视作品，展现了扎实的演技功底和对角色的深入理解。
+                                    他积极参与公益活动，关注社会问题，并通过自己的影响力传递正能量，树立了良好的社会形象。
+                                </p>
+                            </div>
+                            <div>
+                                 <img src="{{ url_for('static', filename='image/朱时茂.jpg') }}" alt="朱时茂">
+                                <a href="#" class="title">朱时茂</a>
+                                <p>朱时茂，中国电影界的一颗璀璨之星，长久以来以其卓越的演技和深情的表演风格赢得了广泛认可
+                                    茂哥是个热心肠的人，是圈内公认的好人，当了导演之后也是位好导演，他从来不会在片场对人发脾气
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div >
+                            <div>
+                                 <img src="{{ url_for('static', filename='image/胡歌.jpg') }}" alt="胡歌">
+                                <a href="#" class="title">胡歌</a>
+                                <p>胡歌是中国著名男演员，以其出色的演技和深情的表演而备受赞誉。他在多部影视作品中的精彩表现赢得了广泛的认可和喜爱。胡歌的表演风格细腻、真挚，能够深刻地诠释角色内心的情感，因此备受观众和评论家的称赞。他的演技在业内外都享有很高的声誉，被认为是中国当代最杰出的男演员之一。
+
+                                    除了出色的演技外，胡歌还以其坚韧不拔的性格和积极的社会参与而备受尊敬。他积极参与公益活动，关注社会问题，为一些慈善事业贡献了自己的力量。在娱乐圈，他也以谦逊、低调的态度赢得了许多人的尊重和喜爱。</p>
+                            </div>
+                            <div>
+                                <img src="{{ url_for('static', filename='image/周星驰.jpeg') }}" alt="周星驰">
+                                <a href="#" class="title">周星驰</a>
+                                <p>周星驰以其幽默风趣和独特的喜剧表演风格赢得了广大观众的喜爱。他的作品充满了创意和幽默，成为了香港电影界的一面旗帜。 
+                                    导演才华：除了出色的表演，周星驰还以其导演和编剧的才华而备受认可。他的导演作品充满了创意和想象力，深受观众和评论家的好评。
+                                    周星驰以其独特的喜剧风格和出色的导演才华成为了华语电影界的一面旗帜，他的作品深受观众的喜爱，并对电影产业产生了深远的影响。
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6" id="moive_1">
+                <ul class="body" style="display: flex; flex-direction: column; list-style: none; ">
+                    <li>
+                        <div style="width: 100%;">
+                             <img src="{{ url_for('static', filename='image/movie-xhr.jpg') }}" alt="Movie Poster" style="width: 100%; height: 350px; border-radius: 10px;">
+                        </div>
+                        <div class="info text-center">
+                                        <h3>《神偷奶爸》</h3>
+                                <p>《神偷奶爸》是由环球影业及Illumination娱乐公司制作，克里斯·雷诺德和皮埃尔·科芬执导，史蒂夫·卡瑞尔、杰森·赛格尔、拉塞尔·布兰德、朱莉·安德鲁斯等
+                                人配音的喜剧3D动画片，于2010年6月27日在美国上映。</p>
+                                <p>该片讲述公格鲁策划了一出完美的计划，图谋把月亮偷到手，却不料盗取月亮的收缩射线枪被新贼维克托抢走。为
+                                了夺回收缩射线枪，格鲁决定领养三位孤儿，利用她们进入维克托戒备森严的城堡兜售饼干的机会实施偷盗的故事。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="width: 100%;">
+                            <img src="{{ url_for('static', filename='image/大明风华.jpg') }}" alt="大明风华" style="width: 100%; height: 350px; border-radius: 10px;">
+                        </div>
+                        <div class="info text-center">
+                                        <h3>《大明风华》</h3>
+                                <p>《大明风华》是一部以明朝永乐年间为背景的电视剧，主要讲述了孙若微
+                                    （汤唯饰）历经五帝六朝，从靖难之役的幸存者成长为大明王朝的辅佐者的故事。该剧展现了明朝初年的盛世背景，以及孙若微与朱瞻基
+                                    （朱亚文饰）之间的情感纠葛，以及她如何利用自己的智慧和气度帮助大明王朝度过一次次的政治和军事危机
+                                </p>
+                                <p>
+                                    孙若微的父亲景清被朱棣所救，而她的妹妹蔓茵嫁入宫中，她本人则在刺杀朱棣的过程中遭遇了朱瞻基，并最终放弃个人仇恨，辅佐朱瞻基治理国家。剧中不仅展示了孙若微与朱瞻基之间的爱恨交织，还描绘了明朝宫廷内部的权力斗争和家族恩怨，以及孙若微如何处理与朱高煦
+                                    （侯岩松饰）、朱高炽（梁冠华饰）等人的复杂关系。 此外，《大明风华》也深入描绘了朱棣的内心世界和对国家的治理，展现了他作为帝王的柔软与惧怕。剧中还涉及了靖难遗孤的故事线，以及孙若微与朱瞻基之间的命运纠葛，反映了那个时代的历史风云和个人命运。
+                                </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <!--影评专区  -->
+        <div class="container-fluid" id="talk_about">
+            <div class="row mt-3" >
+                <ul class="col-md-5" style="background-color: #FFFFFF;  border-radius: 10px;"> 
+                    <li>
+                        <a href="">
+                            <h3>影评专区</h3> 
+                        </a>
+                    </li>
+                    <li>
+                        <img src="{{ url_for('static', filename='image/yp-hz.jpg') }}" alt="YP-HZ">
+                        <h3 class="title">《活着》——人生的轮回</h3>
+                        <p>《活着》讲诉了在大时代背景下，随着内战、三反五反，大跃进，文化大革命等社会变革徐福贵的人生和家庭不断经受着苦难，到了最后所有亲人都先后离他而去，仅剩下年老的他和一头老牛相依为命。</p>
+                        <img src="{{ url_for('static', filename='image/yp-xskjs.jpg') }}" alt="YP-XSKJS">
+                        <h3 class="title">是心灵的救赎？还是《肖申克的救赎》</h3>
+                        <p>《肖申克的救赎》这部电影名字出现在我的世界里已经有好几年时间，可能快接近十年了，那个时候我还疯狂的迷恋韩庚，在他的个人名片中，最喜欢的电影就是这部，但却一直没有真正的去看过。</p>
+                        <img src="{{ url_for('static', filename='image/yp-ayzc.jpg') }}" alt="YP-AYZC">
+                        <h3 class="title">择一而终，或许是最好的结果——《爱乐之城》</h3>
+                        <p>人生这条或漫长、或短暂的路，是通往梦想的一条荆棘丛生、欢喜遍布的路，更是我们追求人生意义之路。这条路有长、有短，有平淡、有起伏，有苦痛、有欢喜。</p>
+                        <img src="{{ url_for('static', filename='image/yp-trjta.jpg') }}" alt="YP-TRJTA">
+                        <h3 class="title">看完《唐人街探案2》，你知道Q是谁了吗？</h3>
+                        <p>这个案子就是两个推理大神一起谋划制作的一起连环杀人案。表面上有那个医生转移焦点，美化了观众心中对于秦风睿智正义的形象。</p>
+                        <img src="{{ url_for('static', filename='image/yp-titanic.jpg') }}" alt="YP-Titanic">
+                        <h3 class="title">《泰坦尼克号》，一场有关爱情和人性的视觉盛宴</h3>
+                        <p>前方的屏幕变黑，演职员列表开始滚动起来，经典的《我心永恒》响起了......曲终人散，人散曲终。</p>
+                        <img src="{{ url_for('static', filename='image/yp-pfdsj.jpg') }}" alt="YP-PFDSJ">
+                        <h3 class="title">《平凡的世界》，致平凡的我们</h3>
+                        <p>剧版的《平凡的世界》开播了，也自然的让我想起了自己第一次拿起《平凡的世界》原著时的情景，那时正值高三的冲刺阶段，高考的压力和未来的迷茫完美地交织在一起，梦想的遥不可及，总是灌输应该放弃的错觉。</p>
+                    </li>
+                </ul>
+                <div class="col-md-2"></div>
+                <ul class="col-md-5" style="background-color: #FFFFFF;  border-radius: 10px;"> 
+                    <li>
+                        <a href="">
+                            <h3>影评专区</h3> 
+                        </a>
+                    </li>
+                    <li>
+                         <img src="{{ url_for('static', filename='image/午夜凶铃.jpg') }}" alt="午夜凶铃">
+                        <h3 class="title">《午夜凶铃》</h3>
+                        <p>电影中的惊悚元素设置得当，通过恐怖的场景和音效，成功地引起了观众的恐惧和不安情绪。 </p>
+                        <img src="{{ url_for('static', filename='image/仙剑奇侠传.webp') }}" alt="">
+                        <h3 class="title">《仙剑奇侠传》</h3>
+                        <p>以其独特的仙侠题材、丰富的情感表达和精美的美术设计，吸引了众多观众的喜爱，成为了中国电视剧中的经典之作。</p>
+                        <img src="{{ url_for('static', filename='image/误杀.jpeg') }}" alt="">
+                        <h3 class="title">《误杀》</h3>
+                        <p>深刻的社会反思：电影深入探讨了意外杀人后的法律和伦理困境，引发人们对正义、善恶、道德等问题的思考。</p>
+                        <img src="{{ url_for('static', filename='image/疯狂动物城.webp') }}" alt="">
+                        <h3 class="title">《疯狂动物城》</h3>
+                        <p>一部出色的迪士尼动画作品，在世界观构建、人物塑造、剧情设计和视觉呈现等方面都达到了很高水准。</p>
+                        <img src="{{ url_for('static', filename='image/满江红.jpg') }}" alt="">
+                        <h3 class="title">《满江红》</h3>
+                        <p>乍听欢欣闹腾，实则波云诡谲，暗潮涌动，各怀鬼胎，以命设局，以人赌命，只为向权倾者讨取历史的真相。</p>
+                        <img src="{{ url_for('static', filename='image/釜山行.webp') }}" alt="">
+                        <h3 class="title">《釜山行》</h3>
+                        <p>出色的僵尸设计：电影中的僵尸形象设计非常出色，既有恐怖感，又有一定的逼真感，给人以强烈的视觉冲击。</p>
+                        <p>紧张刺激的剧情：从病毒爆发到逃离釜山，整个故事节奏紧凑，充满了悬疑和惊险，让人一路紧张观影。</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+<br>
+<!-- 尾部导航栏 -->
+<div class="container-fluid">
+<div class="d-flex justify-content-center align-items-center " id="foot" style="border-radius: 10px; background-color: #FFFFFF;width: 100%;">
+    <div class="d-flex align-items-center">
+        <img src="{{ url_for('static', filename='image/vx.jpg') }}" alt="" style="margin-right: 20px;">
+        <div>
+            <p>个人影视网站 -- 在线影院</p>
+            <p>扫描左侧二维码，添加我为好友</p>
+            <p>该页面由李永发个人设计完成，所有版权归其个人所有</p>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+    <!-- 电影推荐 -->
+    <div id="menu1" class="tab-pane" style="background-color: #FFFFFF;  border-radius: 10px;">
+        <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+            <h3 style="display: inline;">电影推荐</h3>
+            <a href="{{ url_for('movie') }}" style="color: black;">电影</a>
+        </div>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/九龙城寨.jpg') }}" alt="九龙城寨">
+                <div class="info">
+                    <a href="#" class="title">九龙城寨之围城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/没有一顿火锅.jpg') }}" alt="火锅">
+                <div class="info">
+                    <a href="#" class="title">没有一顿火锅解决不了··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">飞驰人生2</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                 <img src="{{ url_for('static', filename='image/猿球崛起.jpg') }}" alt="猿球崛起">
+                <div class="info">
+                    <a href="#" class="title">猩球崛起：新世界</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/末路狂花钱.webp') }}" alt="末路狂花钱">
+                <div class="info">
+                    <a href="#" class="title">末路狂花钱</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/哥斯拉.jpg') }}" alt="哥斯拉">
+                <div class="info">
+                    <a href="#" class="title">哥斯拉大战金刚2··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/草木人间.jpg') }}" alt="草木人间">
+                <div class="info">
+                    <a href="#" class="title">草木人间</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/哥斯拉.jpg') }}" alt="哥斯拉">
+                <div class="info">
+                    <a href="#" class="title">哥斯拉··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/破墓.webp') }}" alt="破墓">
+                <div class="info">
+                    <a href="#" class="title">破墓</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/放大.webp') }}" alt="放大">
+                <div class="info">
+                    <a href="#" class="title">放大</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/原生罪.jpg') }}" alt="原生罪">
+                <div class="info">
+                    <a href="#" class="title">源生罪</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/九龙城寨.jpg') }}" alt="九龙城寨">
+                <div class="info">
+                    <a href="#" class="title">九龙城寨之围城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                    <img src="{{ url_for('static', filename='image/没有一顿火锅.jpg') }}" alt="火锅">
+                <div>
+                    <a href="#" class="title">没有一顿火锅解决不了的事</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">飞驰人生2</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 电视剧 -->
+    <div id="menu2" class="tab-pane" style="background-color: #FFFFFF;  border-radius: 10px;">
+        <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+            <h3 style="display: inline;">电视剧推荐</h3>
+             <a href="{{ url_for('tvshow') }}" style="color: black;">电视剧</a>
+
+        </div>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/放大.webp') }}" alt="放大">
+                <div class="info">
+                    <a href="#" class="title">新生</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/bkgr.jpg') }}" alt="Background Image">
+                <div class="info">
+                    <a href="#" class="title">不可告人</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240408-1/57fafdeba06fa2de88d12244795d1430.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">背着善再跑吧</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240421-1/6b68f99b4be2fcc14997ee3808836b13.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">哈尔滨一九四四</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240503-1/9d1486bc25b063a422cb8e96333c756c.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">请这样和我恋爱··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240509-1/be02966c8a66a57991c228c48b4705a3.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">庆余年第一季··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240508-1/a46ccabbde05debf538041e796c46746.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">天行健</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240422-1/9761328bf7838312338423aa23de5efc.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">春色寄情人</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240507-1/d2ecdb34ceff35a5d34226e87173b2ae.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">我的阿勒泰</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240409-1/2d5cf4cb5981cd1ecf2970d90f6ab90d.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">城中之城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240309-1/0a95bd567d314abbfdf8e181520af5ea.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">泪之女王</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240427-1/c3cd23d2185f16e2165c7f0171d1fdc9.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">微暗之火</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/九龙城寨.jpg') }}" alt="九龙城寨">
+                <div class="info">
+                    <a href="#" class="title">九龙城寨之围城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/没有一顿火锅.jpg') }}" alt="火锅">
+                <div class="info">
+                    <a href="#" class="title">没有一顿火锅解决不了的事</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">飞驰人生2</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 动漫 -->
+    <div id="menu3" class="tab-pane" style="background-color: #FFFFFF;  border-radius: 10px;">
+        <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+            <h3 style="display: inline;">动漫推荐</h3>
+            <a href="{{ url_for('animation') }}" style="color: black;">动漫</a>
+
+        </div>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+                <img src="https://pic.lzzypic.com/upload/vod/20230706-1/71c8678b6a36cc8757d829f24a546518.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">夫妇联欢~回不去··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20231226-1/c0bd51ce3518d47bfccb1dce6099b783.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">挣扎吧，亚当君</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240414-1/410250bb8e1ab3bb650643e946336251.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">怪兽8号</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240513-1/dd88d122bec7f548bbd0d28a68855798.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">鬼灭之刃··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://pic.lzzypic.com/upload/vod/20220731-1/49f05be1577eedcef89bf77415186537.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">斗破苍穹年番</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://pic.lzzypic.com/upload/vod/20230421-1/ced1759f5b278a70124be9e67280e1df.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">向涟苍士献上纯洁</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20230104-1/c4b8d64c41594a01bee87f7abc1ee58e.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">凡人修仙传</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://pic.lzzypic.com/upload/vod/20220319-1/704d65aebb2d59f07254b86e05c4384c.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">完美世界</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20230624-1/c672d5cab2026eefeaf8e8049ca88de3.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">斗罗大陆2··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240406-1/328af69702ddb49ca520895184434ee2.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">我的英雄学院···</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20230925-1/9a16a4fbda40c6ac2207a50b3561f91c.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">仙逆</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240406-1/903615d0c71984e8b9e5a48bd13a46c6.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">关于我转生变成···</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/九龙城寨.jpg') }}" alt="九龙城寨">
+                <div class="info">
+                    <a href="#" class="title">九龙城寨之围城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/没有一顿火锅.jpg') }}" alt="火锅">
+                <div class="info">
+                    <a href="#" class="title">没有一顿火锅解决不了的事</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">飞驰人生2</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 综艺 -->
+    <div id="menu4" class="tab-pane" style="background-color: #FFFFFF;  border-radius: 10px;">
+        <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+            <h3 style="display: inline;">综艺推荐</h3>
+            <a href="{{ url_for('variety') }}" style="color: black;">综艺</a>
+
+        </div>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240510-1/8eedd75d345afabd47a39fe50817203b.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">歌手</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240323-1/9cfc4d0a75cab1b9ac73cb7b3e771963.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">哈哈哈哈哈第四季</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240419-1/19e8ac1df3a021e80484551a4bcc6f26.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">奔跑吧第八季</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240504-1/4543d50791f6e32edd4b84d8d95e505c.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">中国新说唱</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240426-1/950c892e5cafd1e3743fc2c53c36f4e2.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">灿烂的花园</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240426-1/1dc751f8e4277db859ecb6b71814a7a8.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">天赐的声音第五季</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240421-1/82b8022784612ce5234cc7c9b427b64a.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">花儿与少年第六季</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240118-1/b34c358653de8a885e0874a064f443ed.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">大侦探第九季</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://pic.lzzypic.com/upload/vod/20220325-1/4264be860364d4e408e4a56eb9cf9e81.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">GOOP的生活方式···</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240225-1/7959c5d695b2280fc006dc86b5fa9682.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">无限超越班··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240418-1/b4ce38424191cbd148d144f042bfccd1.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">开始推理吧···</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20221102-1/fd6e7b0bc241ae5ef8487bc864aad9f4.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">你好星期六</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240421-1/82b8022784612ce5234cc7c9b427b64a.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">花儿与少年第六季</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240118-1/b34c358653de8a885e0874a064f443ed.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">大侦探第九季</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://pic.lzzypic.com/upload/vod/20220325-1/4264be860364d4e408e4a56eb9cf9e81.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">GOOP的生活方式···</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240225-1/7959c5d695b2280fc006dc86b5fa9682.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">无限超越班··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20240418-1/b4ce38424191cbd148d144f042bfccd1.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">开始推理吧···</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.image8899.net/upload/vod/20221102-1/fd6e7b0bc241ae5ef8487bc864aad9f4.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">你好星期六</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 纪录片 -->
+    <div id="menu5" class="tab-pane" style="background-color: #FFFFFF;  border-radius: 10px;">
+        <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-right: 50px;">
+            <h3 style="display: inline;">纪录片推荐</h3>
+            <a href="{{ url_for('documentary') }}" style="color: black;">纪录片</a>
+
+        </div>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/九龙城寨.jpg') }}" alt="九龙城寨">
+                <div class="info">
+                    <a href="#" class="title">九龙城寨之围城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/没有一顿火锅.jpg') }}" alt="火锅">
+                <div class="info">
+                    <a href="#" class="title">没有一顿火锅解决不了··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">飞驰人生2</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                 <img src="{{ url_for('static', filename='image/猿球崛起.jpg') }}" alt="猿球崛起">
+                <div class="info">
+                    <a href="#" class="title">猩球崛起：新世界</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/末路狂花钱.webp') }}" alt="末路狂花钱">
+                <div class="info">
+                    <a href="#" class="title">末路狂花钱</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/九龙城寨.jpg') }}" alt="九龙城寨">
+                <div class="info">
+                    <a href="#" class="title">九龙城寨之围城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/没有一顿火锅.jpg') }}" alt="火锅">
+                <div class="info">
+                    <a href="#" class="title">没有一顿火锅解决不了··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">飞驰人生2</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                 <img src="{{ url_for('static', filename='image/猿球崛起.jpg') }}" alt="猿球崛起">
+                <div class="info">
+                    <a href="#" class="title">猩球崛起：新世界</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/末路狂花钱.webp') }}" alt="末路狂花钱">
+                <div class="info">
+                    <a href="#" class="title">末路狂花钱</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="body" style="display: flex; list-style: none; ">
+            <li class="col-md-2">
+               <img src="{{ url_for('static', filename='image/九龙城寨.jpg') }}" alt="九龙城寨">
+                <div class="info">
+                    <a href="#" class="title">九龙城寨之围城</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/没有一顿火锅.jpg') }}" alt="火锅">
+                <div class="info">
+                    <a href="#" class="title">没有一顿火锅解决不了··</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                <div class="info">
+                    <a href="#" class="title">飞驰人生2</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/维和防暴队.jpg') }}" alt="维和防暴队">
+                <div class="info">
+                    <a href="#" class="title">维和防暴队</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                 <img src="{{ url_for('static', filename='image/猿球崛起.jpg') }}" alt="猿球崛起">
+                <div class="info">
+                    <a href="#" class="title">猩球崛起：新世界</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+            <li class="col-md-2">
+                <img src="{{ url_for('static', filename='image/末路狂花钱.webp') }}" alt="末路狂花钱">
+                <div class="info">
+                    <a href="#" class="title">末路狂花钱</a>
+                    <p class="desc">推荐评分：6.8</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+            <script src="../Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.min.js"></script>
+            <script src="../Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

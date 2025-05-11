@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('{{ url_for('static', filename='image/66666.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            color: #333333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+            color: #666666;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            text-decoration: none;
+            color: #666666;
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        a:hover {
+            color: #333333;
+        }
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .links a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>登录界面</h2>
+        <form action="/login/api" method="post">
+            <label for="name">输入账号:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="passwd">输入密码:</label>
+            <input type="password" id="passwd" name="passwd" required>
+            <br>
+            <button type="submit">登录</button>
+        </form>
+        <div class="links">
+            <a href="/register.html">注册</a>
+            <a href="/forgetpasswd.html">忘记密码</a>
+        </div>
+    </div>
+</body>
+</html>

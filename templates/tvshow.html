@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电视剧页面</title>
+    <!-- 引入外联样式表文件 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/bootstrapicons/bootstrap-icons.css') }}">
+    <style>
+        #head_1{
+            background-color: #999191;
+            border-radius: 10px;
+        }
+        #head_1 a{
+            color: black;
+        }
+        /* 去除ul自带的属性 */
+        .custom-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #part_1 img{
+            width: 160px;
+            height: 233px;
+        }
+        #part_1 a{
+            color: black;
+        }
+        #part_1 ul{
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+{% block content %}
+    {% endblock %}
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- 设置四个下拉菜单 -->
+ <!-- 设置四个下拉菜单 -->
+    <div class="container-fluid mt-3 d-flex justify-content-center" id="head_1">
+        <ul class="nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">类型</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">动作</a></li>
+              <li><a class="dropdown-item" href="#">喜剧</a></li>
+              <li><a class="dropdown-item" href="#">爱情</a></li>
+              <li><a class="dropdown-item" href="#">科幻</a></li>
+              <li><a class="dropdown-item" href="#">恐怖</a></li>
+              <li><a class="dropdown-item" href="#">剧情</a></li>
+              <li><a class="dropdown-item" href="#">战争</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">地区</a>
+            <ul class="dropdown-menu  pull-right">
+                <a class="dropdown-item" href="#">全部</a>
+                <a class="dropdown-item" href="#">大陆</a>
+                <a class="dropdown-item" href="#">香港</a>
+                <a class="dropdown-item" href="#">台湾</a>
+                <a class="dropdown-item" href="#">美国</a>
+                <a class="dropdown-item" href="#">法国</a>
+                <a class="dropdown-item" href="#">英国</a>
+                <a class="dropdown-item" href="#">日本</a>
+                <a class="dropdown-item" href="#">韩国</a>
+                <a class="dropdown-item" href="#">德国</a>
+                <a class="dropdown-item" href="#">泰国</a>
+                <a class="dropdown-item" href="#">印度</a>
+                <a class="dropdown-item" href="#">意大利</a>
+                <a class="dropdown-item" href="#">西班牙</a>
+                <a class="dropdown-item" href="#">加拿大</a>
+                <a class="dropdown-item" href="#">其他</a>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">年代</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">2023</a></li>
+              <li><a class="dropdown-item" href="#">2022</a></li>
+              <li><a class="dropdown-item" href="#">2021</a></li>
+              <li><a class="dropdown-item" href="#">2020</a></li>
+              <li><a class="dropdown-item" href="#">2019</a></li>
+              <li><a class="dropdown-item" href="#">2018</a></li>
+              <li><a class="dropdown-item" href="#">2017</a></li>
+              <li><a class="dropdown-item" href="#">2016</a></li>
+              <li><a class="dropdown-item" href="#">2015</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">排序</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">按时间</a></li>
+              <li><a class="dropdown-item" href="#">按人气</a></li>
+              <li><a class="dropdown-item" href="#">按评分</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--主要内容 -->
+      <div class="tab-content container-fluid" style="margin-top: 10px; background-color: #999191;  border-radius: 2px; " id="part_1">
+        <div class="container tab-pane active">
+            <div class="main-show mw" style="background-color: #FFFFFF; border-radius: 10px;">
+                <div class="list-star block row">
+                    <ul class="body" style="display: flex; list-style: none; ">
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/d1fc07d5328af07edaabe18f0d4a6871.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">九龙城寨之围城</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240511-1/83e14b14783d9e96d0bd30d6c35a7ddb.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">没有一顿火锅解决不了··</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">飞驰人生2</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/b09c1781d3b56ff0e938d4024be812a9.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">维和防暴队</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240510-1/f75f308c4c3563c11e2195ed8c766468.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">猩球崛起：新世界</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/e0715cc611ab13abaedfe4c22cbe0dda.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">末路狂花钱</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="body" style="display: flex; list-style: none; ">
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/d1fc07d5328af07edaabe18f0d4a6871.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">九龙城寨之围城</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240511-1/83e14b14783d9e96d0bd30d6c35a7ddb.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">没有一顿火锅解决不了··</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">飞驰人生2</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/b09c1781d3b56ff0e938d4024be812a9.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">维和防暴队</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240510-1/f75f308c4c3563c11e2195ed8c766468.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">猩球崛起：新世界</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/e0715cc611ab13abaedfe4c22cbe0dda.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">末路狂花钱</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="body" style="display: flex; list-style: none; ">
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/d1fc07d5328af07edaabe18f0d4a6871.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">九龙城寨之围城</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240511-1/83e14b14783d9e96d0bd30d6c35a7ddb.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">没有一顿火锅解决不了··</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.lzzyimg.com/upload/vod/20240212-1/d9b988f10fea84d0de3061a15792de15.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">飞驰人生2</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/b09c1781d3b56ff0e938d4024be812a9.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">维和防暴队</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240510-1/f75f308c4c3563c11e2195ed8c766468.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">猩球崛起：新世界</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240504-1/e0715cc611ab13abaedfe4c22cbe0dda.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">末路狂花钱</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container mt-3 " style="margin-left: 470px;">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">上一页</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">下一页</a></li>
+                </ul>
+            </div>
+
+
+    <!-- 引入js文件，顺序不能颠倒 -->
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动漫页面</title>
+    <!-- 引入外联样式表文件 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/bootstrapicons/bootstrap-icons.css') }}">
+</head>
+<style>
+    #head_1{
+        background-color: #999191;
+        border-radius: 10px;
+    }
+    #head_1 a{
+        color: black;
+    }
+    /* 去除ul自带的属性 */
+    .custom-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  #part_1 img{
+    width: 160px;
+    height: 233px;
+    
+  }
+  #part_1 a{
+    color: black;
+  }
+  #part_1 ul{
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+</style>
+<body>
+{% block content %}
+    {% endblock %}
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- 设置四个下拉菜单 -->
+    <div class="container-fluid mt-3 d-flex justify-content-center" id="head_1">
+        <ul class="nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">类型</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">动作</a></li>
+              <li><a class="dropdown-item" href="#">喜剧</a></li>
+              <li><a class="dropdown-item" href="#">爱情</a></li>
+              <li><a class="dropdown-item" href="#">科幻</a></li>
+              <li><a class="dropdown-item" href="#">恐怖</a></li>
+              <li><a class="dropdown-item" href="#">剧情</a></li>
+              <li><a class="dropdown-item" href="#">战争</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">地区</a>
+            <ul class="dropdown-menu  pull-right">
+                <a class="dropdown-item" href="#">全部</a>
+                <a class="dropdown-item" href="#">大陆</a>
+                <a class="dropdown-item" href="#">香港</a>
+                <a class="dropdown-item" href="#">台湾</a>
+                <a class="dropdown-item" href="#">美国</a>
+                <a class="dropdown-item" href="#">法国</a>
+                <a class="dropdown-item" href="#">英国</a>
+                <a class="dropdown-item" href="#">日本</a>
+                <a class="dropdown-item" href="#">韩国</a>
+                <a class="dropdown-item" href="#">德国</a>
+                <a class="dropdown-item" href="#">泰国</a>
+                <a class="dropdown-item" href="#">印度</a>
+                <a class="dropdown-item" href="#">意大利</a>
+                <a class="dropdown-item" href="#">西班牙</a>
+                <a class="dropdown-item" href="#">加拿大</a>
+                <a class="dropdown-item" href="#">其他</a>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">年代</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">2023</a></li>
+              <li><a class="dropdown-item" href="#">2022</a></li>
+              <li><a class="dropdown-item" href="#">2021</a></li>
+              <li><a class="dropdown-item" href="#">2020</a></li>
+              <li><a class="dropdown-item" href="#">2019</a></li>
+              <li><a class="dropdown-item" href="#">2018</a></li>
+              <li><a class="dropdown-item" href="#">2017</a></li>
+              <li><a class="dropdown-item" href="#">2016</a></li>
+              <li><a class="dropdown-item" href="#">2015</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">排序</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">按时间</a></li>
+              <li><a class="dropdown-item" href="#">按人气</a></li>
+              <li><a class="dropdown-item" href="#">按评分</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--主要内容 -->
+      <div class="tab-content container-fluid" style="margin-top: 10px; background-color: #999191;  border-radius: 2px; " id="part_1">
+        <div class="container tab-pane active">
+            <div class="main-show mw" style="background-color: #FFFFFF; border-radius: 10px;">
+                <div class="list-star block row">   
+                    <ul class="body" style="display: flex; list-style: none; ">
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20230104-1/c4b8d64c41594a01bee87f7abc1ee58e.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">凡人修仙传</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://pic.lzzypic.com/upload/vod/20220319-1/704d65aebb2d59f07254b86e05c4384c.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">完美世界</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20230624-1/c672d5cab2026eefeaf8e8049ca88de3.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">斗罗大陆2··</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.lzzyimg.com/upload/vod/20240406-1/328af69702ddb49ca520895184434ee2.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">我的英雄学院···</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.lzzyimg.com/upload/vod/20230925-1/9a16a4fbda40c6ac2207a50b3561f91c.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">仙逆</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240406-1/903615d0c71984e8b9e5a48bd13a46c6.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">关于我转生变成···</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="body" style="display: flex; list-style: none; ">
+                        <li class="col-md-2">
+                            <img src="https://pic.lzzypic.com/upload/vod/20230706-1/71c8678b6a36cc8757d829f24a546518.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">夫妇联欢~回不去··</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.lzzyimg.com/upload/vod/20231226-1/c0bd51ce3518d47bfccb1dce6099b783.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">挣扎吧，亚当君</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240414-1/410250bb8e1ab3bb650643e946336251.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">怪兽8号</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240513-1/dd88d122bec7f548bbd0d28a68855798.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">鬼灭之刃··</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://pic.lzzypic.com/upload/vod/20220731-1/49f05be1577eedcef89bf77415186537.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">斗破苍穹年番</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://pic.lzzypic.com/upload/vod/20230421-1/ced1759f5b278a70124be9e67280e1df.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">向涟苍士献上纯洁</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="body" style="display: flex; list-style: none; ">
+                        <li class="col-md-2">
+                            <img src="https://pic.lzzypic.com/upload/vod/20230706-1/71c8678b6a36cc8757d829f24a546518.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">夫妇联欢~回不去··</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.lzzyimg.com/upload/vod/20231226-1/c0bd51ce3518d47bfccb1dce6099b783.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">挣扎吧，亚当君</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240414-1/410250bb8e1ab3bb650643e946336251.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">怪兽8号</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://img.image8899.net/upload/vod/20240513-1/dd88d122bec7f548bbd0d28a68855798.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">鬼灭之刃··</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://pic.lzzypic.com/upload/vod/20220731-1/49f05be1577eedcef89bf77415186537.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">斗破苍穹年番</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                        <li class="col-md-2">
+                            <img src="https://pic.lzzypic.com/upload/vod/20230421-1/ced1759f5b278a70124be9e67280e1df.jpg" alt="">
+                            <div class="info">
+                                <a href="#" class="title">向涟苍士献上纯洁</a>
+                                <p class="desc">推荐评分：6.8</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container mt-3 " style="margin-left: 470px;">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">上一页</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">下一页</a></li>
+                </ul>
+            </div>
+    <!-- 引入js文件，顺序不能颠倒 -->
+    <script src="../Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.min.js"></script> 
+    <script src="../Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

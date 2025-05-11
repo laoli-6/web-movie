@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 </title>
+    <!-- 引入外联样式表文件 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/bootstrapicons/bootstrap-icons.css') }}">
+</head>
+<style>
+    #about img {
+        width: 400px;
+        height: 100px;
+    }
+
+    #foot img {
+        width: 130px;
+        height: 145px;
+    }
+    #foot {
+        padding: 0;
+        margin: 0;
+    }
+</style>
+<body>
+    {% block content %}
+    {% endblock %}
+
+    <div class="container-fluid" id="about" style="display: inline-block; background-color: #999191; border-radius: 10px;">
+        <div class="row head_img" style="align-items: center;">
+            <div class="col-md-10">
+                <a>
+                    <img src="{{ url_for('static', filename='image/在线影院.png') }}" alt="">
+                </a>
+            </div>
+            <div class="col-md-2">
+                <p>既然选择了前方,便只顾一路风雨兼程!</p>
+            </div>
+        </div>
+        <div class="detail-header" style="border-radius: 10px; background-color: white;">
+            <div class="detail-arcticle">
+                <div class="arcticle-header text-center">
+                    <h3>个人简介：</h3>
+                    <p>制作者李永发，现就读于青海民族大学计算机学院21人工智能班。</p>
+                    <p>该网站取名在线影院，其主题为影视资源介绍与影评台词分享</p>
+                    <p>由于对课程掌握不够，对影视资源了解碎片化，故在此网站页面设计过程中页面做的很简陋</p>
+                    <h3>联系方式：</h3>
+                    <p>15500515613</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入js文件，顺序不能颠倒 -->
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='Bootstrap5.1教学用/Bootstrap5.1/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='image/999.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .change-password-container {
+            border: 2px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="change-password-container">
+        <h2>更改密码界面</h2>
+        <form action="/forgetpasswd" method="post">
+            <label for="ID">ID:</label>
+            <input type="text" id="ID" name="ID" required>
+            <br>
+            <label for="QQ">QQ:</label>
+            <input type="text" id="QQ" name="QQ" required>
+            <br>
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" name="Email" required>
+            <br>
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" required>
+            <br>
+            <label for="yes_password">Confirm New Password:</label>
+            <input type="password" id="yes_password" name="yes_password" required>
+            <br>
+            <button type="submit">更改密码</button>
+        </form>
+        <a href="/login.html">返回登录界面</a>
+    </div>
+</body>
+</html>
